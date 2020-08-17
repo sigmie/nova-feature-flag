@@ -19,7 +19,6 @@ class ToolServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'nova-feature-flags');
 
-        dd('fabe');
         $this->app->booted(function () {
             $this->routes();
         });
@@ -52,6 +51,9 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/features.php',
+            'features'
+        );
     }
 }
