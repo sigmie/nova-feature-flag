@@ -26,6 +26,11 @@ class ToolServiceProvider extends ServiceProvider
         Nova::serving(function (ServingNova $event) {
             //
         });
+
+        // Publish config
+        $this->publishes([
+            __DIR__ . '/../config/' => config_path(),
+        ], 'config');
     }
 
     /**

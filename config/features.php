@@ -22,7 +22,6 @@ return [
     */
 
     'feature' => [
-        'auth' => false,
     ],
 
     /*
